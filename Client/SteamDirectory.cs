@@ -1,13 +1,5 @@
 using System;
 
-
-
-
-
-
-
-
-
 class SteamDirectory{
 
      public String directoryPath;
