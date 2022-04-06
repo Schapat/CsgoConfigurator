@@ -50,7 +50,8 @@ namespace Client
                         }
                     }   
                 }
-            }return steamDirectoryPaths;
+            }
+            return steamDirectoryPaths;
         }
 
         private void FindAccountDirectorys(String path)
@@ -63,6 +64,7 @@ namespace Client
                         {
                             steamDirectoryPath.accountDir = account;
                             FindCfgDirectorys(steamDirectoryPath.accountDir);
+                            break;
                         }
                     }
                }
@@ -89,8 +91,7 @@ namespace Client
                                     steamDirectoryPaths.Add(steamDirectoryPath);
                                     break;
                                 }
-                            }
-                            break;  
+                            }  
                         } 
                     } 
                 }
