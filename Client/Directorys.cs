@@ -29,9 +29,7 @@ namespace Client
                     {
                         if (dir.Contains("Steam"))
                         {
-                            steamDirectoryPath = new SteamDirectoryPath();
-                            steamDirectoryPath.steamDir = dir;
-                            FindAccountDirectorys(steamDirectoryPath.steamDir);
+                            FindAccountDirectorys(dir);
                         }
                         else
                         {
@@ -41,9 +39,7 @@ namespace Client
                                 {
                                     if (subDir.Contains("Steam"))
                                     {
-                                        steamDirectoryPath = new SteamDirectoryPath();
-                                        steamDirectoryPath.steamDir = subDir;
-                                        FindAccountDirectorys(steamDirectoryPath.steamDir);
+                                        FindAccountDirectorys(subDir);
                                     }
                                 }
                             }
@@ -54,26 +50,23 @@ namespace Client
             return steamDirectoryPaths;
         }
 
-        private void FindAccountDirectorys(String path)
+        private void FindAccountDirectorys(String steamPath)
         { 
-               foreach(var dir in Directory.GetDirectories(path))
-               {
-                    if (dir.Contains("userdata"))
+            foreach(var dir in Directory.GetDirectories(steamPath))
+            {
+                if (dir.Contains("userdata"))
+                {
+                    foreach(var account in Directory.GetDirectories(dir))
                     {
-                        foreach(var account in Directory.GetDirectories(dir))
-                        {
-                            steamDirectoryPath.accountDir = account;
-                            FindCfgDirectorys(steamDirectoryPath.accountDir);
-                            break;
-                        }
+                        FindCfgDirectorys(steamPath,account);
                     }
-               }
+                }
+            }
         }
 
-        private void FindCfgDirectorys(String path)
+        private void FindCfgDirectorys(String steamPath, String account)
         {
-            
-            foreach (var dir in Directory.GetDirectories(path))
+            foreach (var dir in Directory.GetDirectories(account))
             {
                 //IF CSGO is on this Account
                 if (dir.Contains("730"))
@@ -82,12 +75,11 @@ namespace Client
                     {
                         if (subDir.Contains("local"))
                         {
-                            foreach(var subSubDir in Directory.GetDirectories(subDir)) 
+                            foreach(var cfgDir in Directory.GetDirectories(subDir)) 
                             {
-                                if (subSubDir.Contains("cfg"))
+                                if (cfgDir.Contains("cfg"))
                                 {
-
-                                    steamDirectoryPath.cfgDir = subSubDir;
+                                    steamDirectoryPath = new SteamDirectoryPath(steamPath, account, cfgDir);
                                     steamDirectoryPaths.Add(steamDirectoryPath);
                                     break;
                                 }
