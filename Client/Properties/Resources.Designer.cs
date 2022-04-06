@@ -63,9 +63,29 @@ namespace Client.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
+        internal static byte[] Beetle {
+            get {
+                object obj = ResourceManager.GetObject("Beetle", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
         internal static byte[] Se0rFPS {
             get {
                 object obj = ResourceManager.GetObject("Se0rFPS", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] Username {
+            get {
+                object obj = ResourceManager.GetObject("Username", resourceCulture);
                 return ((byte[])(obj));
             }
         }
