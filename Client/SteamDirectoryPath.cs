@@ -18,11 +18,5 @@ namespace Client
             this.accountDir = accountDir;
             this.cfgDir = cfgDir;
         }
-
-        public SteamDirectoryPath()
-        {
-
-        }
-
     }
 }
