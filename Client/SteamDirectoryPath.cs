@@ -6,17 +6,22 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-    class Steam
+    public class SteamDirectoryPath
     {
         public String steamDir;
         public String accountDir;
         public String cfgDir;
 
-        public Steam(string steamDir, string accountDir, string cfgDir)
+        public SteamDirectoryPath(string steamDir, string accountDir, string cfgDir)
         {
             this.steamDir = steamDir;
             this.accountDir = accountDir;
             this.cfgDir = cfgDir;
+        }
+
+        public SteamDirectoryPath()
+        {
+
         }
 
     }

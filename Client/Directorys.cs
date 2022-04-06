@@ -9,19 +9,15 @@ namespace Client
 {
     internal class Directorys
     {
-        public List<SteamDirectory> steamDirectorys;
-        public List<AccountDirectory> accountDirectorys;
-        public List<CfgDirectory> cfgDirectorys;
-
+        private List<SteamDirectoryPath> steamDirectoryPaths;
+        SteamDirectoryPath steamDirectoryPath;
 
         public Directorys()
         {
-            steamDirectorys = new List<SteamDirectory>();
-            accountDirectorys = new List<AccountDirectory>();
-            cfgDirectorys = new List<CfgDirectory>();
+            steamDirectoryPaths = new List<SteamDirectoryPath>();
         }
 
-        public List<SteamDirectory> FindSteamDirectorys()
+        public List<SteamDirectoryPath> FindSteamDirectorys()
         {
             DriverInfo driverInfo = new DriverInfo();
 
@@ -33,8 +29,9 @@ namespace Client
                     {
                         if (dir.Contains("Steam"))
                         {
-                            SteamDirectory steamDirectory = new SteamDirectory(dir);
-                            this.steamDirectorys.Add(steamDirectory);
+                            steamDirectoryPath = new SteamDirectoryPath();
+                            steamDirectoryPath.steamDir = dir;
+                            FindAccountDirectorys(steamDirectoryPath.steamDir);
                         }
                         else
                         {
@@ -44,78 +41,60 @@ namespace Client
                                 {
                                     if (subDir.Contains("Steam"))
                                     {
-                                        SteamDirectory steamDirectory = new SteamDirectory(subDir);
-                                        this.steamDirectorys.Add(steamDirectory);
+                                        steamDirectoryPath = new SteamDirectoryPath();
+                                        steamDirectoryPath.steamDir = subDir;
+                                        FindAccountDirectorys(steamDirectoryPath.steamDir);
                                     }
                                 }
                             }
                         }
                     }   
                 }
-            }
-            return steamDirectorys;
+            }return steamDirectoryPaths;
         }
 
-        public List<AccountDirectory> FindAccountDirectorys()
-        {
-
-            if (this.steamDirectorys.Count == 0)
-            {
-                FindSteamDirectorys();
-            }
-            
-            foreach (var steamdirectory in this.steamDirectorys)
-            {
-               foreach(var dir in Directory.GetDirectories(steamdirectory.directoryPath))
+        private void FindAccountDirectorys(String path)
+        { 
+               foreach(var dir in Directory.GetDirectories(path))
                {
                     if (dir.Contains("userdata"))
                     {
                         foreach(var account in Directory.GetDirectories(dir))
                         {
-                            AccountDirectory accountDirectory = new AccountDirectory(account);
-                            this.accountDirectorys.Add(accountDirectory);
+                            steamDirectoryPath.accountDir = account;
+                            FindCfgDirectorys(steamDirectoryPath.accountDir);
                         }
                     }
                }
-            }
-            return accountDirectorys;
         }
 
-        public List<CfgDirectory> FindCfgDirectorys()
+        private void FindCfgDirectorys(String path)
         {
-            if (this.accountDirectorys.Count == 0)
+            
+            foreach (var dir in Directory.GetDirectories(path))
             {
-                FindAccountDirectorys();
-            }
-
-            foreach (var accountdirectory in this.accountDirectorys)
-            {
-                foreach (var dir in Directory.GetDirectories(accountdirectory.directoryPath))
+                //IF CSGO is on this Account
+                if (dir.Contains("730"))
                 {
-                    //IF CSGO is on this Account
-                    if (dir.Contains("730"))
+                    foreach (var subDir in Directory.GetDirectories(dir))
                     {
-                        foreach (var subDir in Directory.GetDirectories(dir))
+                        if (subDir.Contains("local"))
                         {
-                            if (subDir.Contains("local"))
+                            foreach(var subSubDir in Directory.GetDirectories(subDir)) 
                             {
-                                foreach(var subSubDir in Directory.GetDirectories(subDir)) 
+                                if (subSubDir.Contains("cfg"))
                                 {
-                                    if (subSubDir.Contains("cfg"))
-                                    {
-                                        
-                                        CfgDirectory cfgDirectory = new CfgDirectory(subSubDir);
-                                        this.cfgDirectorys.Add(cfgDirectory);
-                                        break;
-                                    }
+
+                                    steamDirectoryPath.cfgDir = subSubDir;
+                                    steamDirectoryPaths.Add(steamDirectoryPath);
+                                    break;
                                 }
-                                break;  
-                            } 
+                            }
+                            break;  
                         } 
-                    }
+                    } 
                 }
             }
-            return cfgDirectorys;
         }
     }
 }

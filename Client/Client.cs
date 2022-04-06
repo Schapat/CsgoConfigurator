@@ -13,14 +13,12 @@ namespace Client
 {
     public partial class Client : MetroFramework.Forms.MetroForm
     {
-        private FileFinder fileFinder;
         private Rar rar;
         private Backup backup;
         public Client()
         {
             InitializeComponent();
 
-            fileFinder = new FileFinder();
             rar = new Rar();
             LaunchGUI1();
             
@@ -29,17 +27,17 @@ namespace Client
         private void metroTile1_Click(object sender, EventArgs e)
         {
             //das muss veraendert werden. neue klasse?
-            rar.UnrarCompleteFiles(".\\cfg\\Se0rFPS.rar", fileFinder.CfgDir);
+            //rar.UnrarCompleteFiles(".\\cfg\\Se0rFPS.rar", fileFinder.CfgDir);
 
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {            
-            fileFinder.CfgDir = fileFinder.CreateCfgDirPath(comboBox2.Text);
-            Properties.Settings.Default.User = "hi";
-            Properties.Settings.Default.Upgrade();
-            Properties.Settings.Default.Save();
-            Properties.Settings.Default.Reload();
+            //fileFinder.CfgDir = fileFinder.CreateCfgDirPath(comboBox2.Text);
+            //Properties.Settings.Default.User = "hi";
+            //Properties.Settings.Default.Upgrade();
+            //Properties.Settings.Default.Save();
+            //Properties.Settings.Default.Reload();
 
         }
         /// <summary>
@@ -77,19 +75,21 @@ namespace Client
         private void LaunchGUI1()
         {
             Directorys directorys = new Directorys();
-            var steamDirectorys = directorys.FindCfgDirectorys();
+            var steamDirectorys = directorys.FindSteamDirectorys();
             foreach (var steamDirectory in steamDirectorys)
             {
-                comboBox2.Items.Add(steamDirectory.directoryPath);
+                comboBox2.Items.Add(steamDirectory.steamDir);
+                comboBox2.Items.Add(steamDirectory.accountDir);
+                comboBox2.Items.Add(steamDirectory.cfgDir);
             }
             
         }
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            var cfgDir = fileFinder.CreateCfgDirPath(comboBox2.Text);
-            backup = new Backup(cfgDir, metroTextBox1.Text);
-            backup.DoBackup();
-            metroTextBox2.Text = backup.ShowBackup();
+            //var cfgDir = fileFinder.CreateCfgDirPath(comboBox2.Text);
+            //backup = new Backup(cfgDir, metroTextBox1.Text);
+            //backup.DoBackup();
+            //metroTextBox2.Text = backup.ShowBackup();
         }
 
         private void testButton_Click(object sender, EventArgs e)
