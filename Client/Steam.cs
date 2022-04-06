@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Client
+{
+    class Steam
+    {
+        public String steamDir;
+        public String accountDir;
+        public String cfgDir;
+
+        public Steam(string steamDir, string accountDir, string cfgDir)
+        {
+            this.steamDir = steamDir;
+            this.accountDir = accountDir;
+            this.cfgDir = cfgDir;
+        }
+
+    }
+}
