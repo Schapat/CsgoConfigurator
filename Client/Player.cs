@@ -12,7 +12,8 @@ namespace Client
 
         public static String playerRarPath;
 
-        public String playername;    
+        public String name;
+        public String rarFile;   
         public bool config;
         public bool autoexec;
         public bool video;
@@ -21,5 +22,7 @@ namespace Client
         public Player()
         {
         }
+
+        public void DeleteRarFile(){}
     }
 }
