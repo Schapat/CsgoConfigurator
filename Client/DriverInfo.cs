@@ -16,11 +16,11 @@ namespace Client
         public DriverInfo()
         {
             drivers = new List<String>();
-            getDriveName();
+            getDrives();
         }
 
 
-        private void getDriveName()
+        private void getDrives()
         {
             var allDrives = DriveInfo.GetDrives();
 
