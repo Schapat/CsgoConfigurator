@@ -73,6 +73,7 @@ namespace Client
                 {
                     foreach (var subDir in Directory.GetDirectories(dir))
                     {
+                        //or remote?
                         if (subDir.Contains("local"))
                         {
                             foreach(var cfgDir in Directory.GetDirectories(subDir)) 
