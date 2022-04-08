@@ -9,8 +9,11 @@ namespace Client
 {
     class Player
     {
-        public String playername;
-        public String playerRarPath;
+
+        public static String playerRarPath;
+
+        public String name;
+        public String rarFile;   
         public bool config;
         public bool autoexec;
         public bool video;
@@ -18,7 +21,8 @@ namespace Client
 
         public Player()
         {
-            this.playerRarPath = ".\\cfg\\";
         }
+
+        public void DeleteRarFile(){}
     }
 }
