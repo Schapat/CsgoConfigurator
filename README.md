@@ -78,7 +78,9 @@ SharpUpdate is modified from AutoUpdater by BetterCoder on Youtube. His tutorial
 
 
 
-#upload Files to MySQL Database
+# Upload Files to MySQL Database
+
+use miniprogramm for encryption decrytion from ascent
 
 uploads files and saves them into a SQL database as binary data
 
