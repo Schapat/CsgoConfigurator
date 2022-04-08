@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptString", "EncryptString\EncryptString.csproj", "{F32D8F0B-12EC-40B5-B937-BB017C608EC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseStorage", "DatabaseStorage\DatabaseStorage.csproj", "{01EFEBAE-F646-4368-B601-8962F7CAA2D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlConnection", "MySqlConnection\MySqlConnection.csproj", "{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,18 +81,18 @@ Global
 		{F32D8F0B-12EC-40B5-B937-BB017C608EC3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F32D8F0B-12EC-40B5-B937-BB017C608EC3}.Release|x86.ActiveCfg = Release|Any CPU
 		{F32D8F0B-12EC-40B5-B937-BB017C608EC3}.Release|x86.Build.0 = Release|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Debug|x86.Build.0 = Debug|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Release|x86.ActiveCfg = Release|Any CPU
-		{01EFEBAE-F646-4368-B601-8962F7CAA2D7}.Release|x86.Build.0 = Release|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Debug|x86.Build.0 = Debug|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Release|x86.ActiveCfg = Release|Any CPU
+		{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

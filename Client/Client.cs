@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySqlDatabase;
 
 namespace Client
 {
@@ -94,7 +95,9 @@ namespace Client
 
         private void testButton_Click(object sender, EventArgs e)
         {
+            DatabaseCommunication dc = new DatabaseCommunication();
 
+            dc.SaveFile("C:\\Users\\patri\\Documents\\GitHub\\CsgoConfigurator-master\\Client\\cfg\\Se0rFPS.rar");
         }
 
        

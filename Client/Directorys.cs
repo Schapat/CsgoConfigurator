@@ -22,8 +22,7 @@ namespace Client
             DriverInfo driverInfo = new DriverInfo();
 
             foreach (var drive in driverInfo.drivers)
-            {
-                foreach (var dir in Directory.GetDirectories(drive))
+            {            foreach (var dir in Directory.GetDirectories(drive))
                 {
                     if (!File.GetAttributes(dir).HasFlag(FileAttributes.Hidden) && !dir.Contains("Win"))
                     {

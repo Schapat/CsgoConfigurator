@@ -114,6 +114,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\MySqlConnection\MySqlConnection.csproj">
+      <Project>{c5550f52-d2c9-4bce-9eab-304afcd21cae}</Project>
+      <Name>MySqlConnection</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
