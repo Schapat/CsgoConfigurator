@@ -27,12 +27,14 @@ namespace MySqlDatabase
 
                 string extn = new FileInfo(filePath).Extension;
                 string fileName = new FileInfo(filePath).Name;
-                string query = "INSERT INTO backups (FileName, Config, Extension) VALUES (@filename, @config, @extn)";
+                string uploadTime = DateTime.Now.ToString("dd.MM.yyyy hh.mm.ss");
+                string query = "INSERT INTO backups (FileName, Config, Extension, UploadTime) VALUES (@filename, @config, @extn, @uploadTime)";
 
                 using (MySqlConnection cn = GetConnection())
                 {
                     MySqlCommand cmd = new MySqlCommand(query, cn);
                     cmd.Parameters.Add("@fileName", MySqlDbType.VarChar).Value = fileName;
+                    cmd.Parameters.Add("@uploadTime", MySqlDbType.VarChar).Value = uploadTime;
                     cmd.Parameters.Add("@config", MySqlDbType.LongBlob).Value = buffer;
                     cmd.Parameters.Add("@extn", MySqlDbType.VarChar).Value = extn;
                     cn.Open();
@@ -45,7 +47,7 @@ namespace MySqlDatabase
         {
             using(MySqlConnection cn = GetConnection())
             {
-                string query = "SELECT FileName FROM backups";
+                string query = "SELECT FileName, UploadTime FROM backups";
                 MySqlDataAdapter adp = new MySqlDataAdapter(query, cn);
                 DataTable dt = new DataTable();
                 adp.Fill(dt);

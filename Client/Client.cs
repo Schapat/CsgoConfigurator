@@ -24,8 +24,6 @@ namespace Client
 
             rar = new Rar();
             LaunchGUI1();
-            dataGridView1.DataSource = dc.LoadFile();
-
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
@@ -90,10 +88,10 @@ namespace Client
         }
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            var selectedRow = dataGridView1.SelectedCells;
-            foreach(var row in selectedRow)
+            var selectedCell = dataGridView1.SelectedCells;
+            foreach(var cell in selectedCell)
             {
-                string name = (string)((DataGridViewCell)row).Value;
+                string name = (string)((DataGridViewCell)cell).Value;
                 dc.DownloadBackup(name, ".\\cfg\\");
             }
         }
