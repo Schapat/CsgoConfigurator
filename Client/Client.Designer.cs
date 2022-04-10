@@ -210,7 +210,7 @@
             // 
             this.metroTile2.ActiveControl = null;
             this.metroTile2.Controls.Add(this.htmlPanel2);
-            this.metroTile2.Location = new System.Drawing.Point(536, 533);
+            this.metroTile2.Location = new System.Drawing.Point(262, 519);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(112, 39);
             this.metroTile2.TabIndex = 18;
@@ -306,7 +306,7 @@
             // 
             this.testButton.ActiveControl = null;
             this.testButton.Controls.Add(this.htmlPanel3);
-            this.testButton.Location = new System.Drawing.Point(536, 474);
+            this.testButton.Location = new System.Drawing.Point(262, 474);
             this.testButton.Name = "testButton";
             this.testButton.Size = new System.Drawing.Size(112, 39);
             this.testButton.TabIndex = 22;
@@ -339,10 +339,10 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 458);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 440);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(447, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(218, 150);
             this.dataGridView1.TabIndex = 24;
             // 
             // Client

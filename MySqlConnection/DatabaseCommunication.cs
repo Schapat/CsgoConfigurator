@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace MySqlDatabase
@@ -57,6 +58,27 @@ namespace MySqlDatabase
             }
         }
 
+        public void DownloadBackup(string fileName, string steamCfgPath)
+        {
+            using (MySqlConnection cn = GetConnection())
+            {
+                string query = "SELECT Config, Extension, FileName FROM backups WHERE FileName=@fileName";
+                MySqlCommand cmd = new MySqlCommand(query, cn);
+                cmd.Parameters.Add("@fileName",MySqlDbType.VarChar).Value = fileName;
+                cn.Open();
+                var reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    var name =reader["FileName"].ToString();
+                    var config = (byte[])reader["Config"];
+                    var extn = reader["Extension"].ToString();
+                    var filePath = steamCfgPath + name;
+
+                    File.WriteAllBytes(filePath, config);
+                    //System.Diagnostics.Process.Start(filePath);
+                }
+            }
+        }
 
 
     }

@@ -90,16 +90,18 @@ namespace Client
         }
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            //var cfgDir = fileFinder.CreateCfgDirPath(comboBox2.Text);
-            //backup = new Backup(cfgDir, metroTextBox1.Text);
-            //backup.DoBackup();
-            //metroTextBox2.Text = backup.ShowBackup();
+            var selectedRow = dataGridView1.SelectedCells;
+            foreach(var row in selectedRow)
+            {
+                string name = (string)((DataGridViewCell)row).Value;
+                dc.DownloadBackup(name, ".\\cfg\\");
+            }
         }
 
         private void testButton_Click(object sender, EventArgs e)
         {
 
-            dc.SaveFile(".\\cfg\\Se0rFPS.rar");
+            dc.SaveFile(".\\cfg\\Username.rar");
             dataGridView1.DataSource = dc.LoadFile();
 
         }
