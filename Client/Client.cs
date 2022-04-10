@@ -16,14 +16,17 @@ namespace Client
     {
         private Rar rar;
         private Backup backup;
+
+        DatabaseCommunication dc = new DatabaseCommunication();
         public Client()
         {
             InitializeComponent();
 
             rar = new Rar();
             LaunchGUI1();
-            
-    }
+            dataGridView1.DataSource = dc.LoadFile();
+
+        }
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
@@ -95,12 +98,17 @@ namespace Client
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            DatabaseCommunication dc = new DatabaseCommunication();
 
-            dc.SaveFile("C:\\Users\\patri\\Documents\\GitHub\\CsgoConfigurator-master\\Client\\cfg\\Se0rFPS.rar");
+            dc.SaveFile(".\\cfg\\Se0rFPS.rar");
+            dataGridView1.DataSource = dc.LoadFile();
+
         }
 
-       
+        private void dataGridView1_ColumnStateChanged(object sender, DataGridViewColumnStateChangedEventArgs e)
+        {
+           
+            
+        }
     }
 
    

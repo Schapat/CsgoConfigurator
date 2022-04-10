@@ -51,9 +51,11 @@
             this.testButton = new MetroFramework.Controls.MetroTile();
             this.htmlPanel3 = new MetroFramework.Drawing.Html.HtmlPanel();
             this.testLabel = new MetroFramework.Controls.MetroLabel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.changeConfig.SuspendLayout();
             this.metroTile2.SuspendLayout();
             this.testButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // changeConfig
@@ -208,11 +210,11 @@
             // 
             this.metroTile2.ActiveControl = null;
             this.metroTile2.Controls.Add(this.htmlPanel2);
-            this.metroTile2.Location = new System.Drawing.Point(487, 361);
+            this.metroTile2.Location = new System.Drawing.Point(536, 533);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(112, 39);
             this.metroTile2.TabIndex = 18;
-            this.metroTile2.Text = "Load Backup";
+            this.metroTile2.Text = "Download";
             this.metroTile2.UseSelectable = true;
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
@@ -304,11 +306,11 @@
             // 
             this.testButton.ActiveControl = null;
             this.testButton.Controls.Add(this.htmlPanel3);
-            this.testButton.Location = new System.Drawing.Point(487, 54);
+            this.testButton.Location = new System.Drawing.Point(536, 474);
             this.testButton.Name = "testButton";
             this.testButton.Size = new System.Drawing.Size(112, 39);
             this.testButton.TabIndex = 22;
-            this.testButton.Text = "TestButton";
+            this.testButton.Text = "Upload";
             this.testButton.UseSelectable = true;
             this.testButton.Click += new System.EventHandler(this.testButton_Click);
             // 
@@ -332,11 +334,23 @@
             this.testLabel.TabIndex = 23;
             this.testLabel.Text = "testLabel";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersVisible = false;
+            this.dataGridView1.Location = new System.Drawing.Point(66, 458);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(447, 150);
+            this.dataGridView1.TabIndex = 24;
+            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 613);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.testButton);
             this.Controls.Add(this.metroTextBox2);
@@ -363,6 +377,7 @@
             this.changeConfig.ResumeLayout(false);
             this.metroTile2.ResumeLayout(false);
             this.testButton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,6 +407,7 @@
         private MetroFramework.Controls.MetroTile testButton;
         private MetroFramework.Drawing.Html.HtmlPanel htmlPanel3;
         private MetroFramework.Controls.MetroLabel testLabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
