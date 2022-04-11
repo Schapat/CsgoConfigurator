@@ -53,10 +53,13 @@
             this.testLabel = new MetroFramework.Controls.MetroLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.htmlPanel4 = new MetroFramework.Drawing.Html.HtmlPanel();
             this.changeConfig.SuspendLayout();
             this.metroTile2.SuspendLayout();
             this.testButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.metroTile1.SuspendLayout();
             this.SuspendLayout();
             // 
             // changeConfig
@@ -382,11 +385,35 @@
             this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Controls.Add(this.htmlPanel4);
+            this.metroTile1.Location = new System.Drawing.Point(288, 287);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(112, 39);
+            this.metroTile1.TabIndex = 26;
+            this.metroTile1.Text = "FillList";
+            this.metroTile1.UseSelectable = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click_1);
+            // 
+            // htmlPanel4
+            // 
+            this.htmlPanel4.AutoScroll = true;
+            this.htmlPanel4.AutoScrollMinSize = new System.Drawing.Size(75, 18);
+            this.htmlPanel4.BackColor = System.Drawing.SystemColors.Window;
+            this.htmlPanel4.Location = new System.Drawing.Point(158, 78);
+            this.htmlPanel4.Name = "htmlPanel4";
+            this.htmlPanel4.Size = new System.Drawing.Size(75, 23);
+            this.htmlPanel4.TabIndex = 0;
+            this.htmlPanel4.Text = "htmlPanel4";
+            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 613);
+            this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroTextBox3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.testLabel);
@@ -416,6 +443,7 @@
             this.metroTile2.ResumeLayout(false);
             this.testButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.metroTile1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,6 +475,8 @@
         private MetroFramework.Controls.MetroLabel testLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Drawing.Html.HtmlPanel htmlPanel4;
     }
 }
 

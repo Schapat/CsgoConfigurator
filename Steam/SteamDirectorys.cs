@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client
+namespace Steam
 {
-    internal class Directorys
+    public class SteamDirectorys
     {
         private List<SteamDirectoryPath> steamDirectoryPaths;
         SteamDirectoryPath steamDirectoryPath;
 
-        public Directorys()
+        public SteamDirectorys()
         {
             steamDirectoryPaths = new List<SteamDirectoryPath>();
         }

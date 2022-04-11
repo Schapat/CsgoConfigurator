@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using MySqlDatabase;
 
 namespace LoginEncrpyt
 {
@@ -16,17 +17,17 @@ namespace LoginEncrpyt
         {
             try
             {
-                Connection.DataSource();
-                con.connOpen();
+                con.GetLoginConnection();
+                con.LoginConnOpen();
                 MySqlCommand command = new MySqlCommand();
                 command.CommandText = "INSERT INTO users (userName, Password, Registered) values (@name, @password, @datetime)";
                 command.Parameters.AddWithValue("@name", userInsert);
                 command.Parameters.AddWithValue("@password", Encrypt.HashString(passInsert));
                 command.Parameters.AddWithValue("@datetime", insertDateTime);
-                command.Connection = Connection.connMaster;
+                command.Connection = con.connLogin;
                 command.ExecuteNonQuery();
                 System.Windows.Forms.MessageBox.Show("Account created", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
-                con.connClose();
+                con.LoginConnClose();
 
                 return userInsert + passInsert + insertDateTime;
             }
@@ -37,7 +38,7 @@ namespace LoginEncrpyt
             }
             finally
             {
-                con.connClose();
+                con.LoginConnClose();
             }
         }
 

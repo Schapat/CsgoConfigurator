@@ -9,18 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySqlDatabase;
+using Steam;
+using Backup;
 
 namespace Client
 {
     public partial class Client : MetroFramework.Forms.MetroForm
     {
-        private RarController rar;
-        DatabaseCommunication dc = new DatabaseCommunication();
+        BackupController dc = new BackupController();
         public Client()
         {
             InitializeComponent();
 
-            rar = new RarController();
             LaunchGUI1();
         }
 
@@ -74,7 +74,7 @@ namespace Client
         */
         private void LaunchGUI1()
         {
-            Directorys directorys = new Directorys();
+            SteamDirectorys directorys = new SteamDirectorys();
             var steamDirectorys = directorys.FindSteamDirectorys();
             foreach (var steamDirectory in steamDirectorys)
             {
@@ -95,8 +95,6 @@ namespace Client
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            dc.SaveFile(".\\cfg\\Username.rar");
-            dataGridView1.DataSource = dc.LoadFile();
 
         }
 
@@ -104,6 +102,16 @@ namespace Client
         {
            
             
+        }
+
+        private void metroTile1_Click_1(object sender, EventArgs e)
+        {
+            FileGrabber fg = new FileGrabber();
+            var playerConfigurationPath = fg.SearchConfigurationFiles(comboBox2.Text);
+            var playerConfigurationPaths = playerConfigurationPath;
+            dc.SaveFile(playerConfigurationPaths);
+            dataGridView1.DataSource = dc.LoadFile();
+
         }
     }
 

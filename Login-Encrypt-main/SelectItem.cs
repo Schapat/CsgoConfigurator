@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using MySqlDatabase;
 
 namespace LoginEncrpyt
 {
@@ -16,13 +17,13 @@ namespace LoginEncrpyt
         {
             try
             {
-                Connection.DataSource();
-                con.connOpen();
+                con.GetLoginConnection();
+                con.LoginConnOpen();
                 MySqlCommand command = new MySqlCommand();
                 command.CommandText = ("Select * from users where (userName, Password) = (@name, @password)");
                 command.Parameters.AddWithValue("@name", userInsert);
                 command.Parameters.AddWithValue("@password", Encrypt.HashString(passInsert));
-                command.Connection = Connection.connMaster;
+                command.Connection = con.connLogin;
                 MySqlDataReader reader = command.ExecuteReader();
 
                 if (reader.Read())
@@ -45,7 +46,7 @@ namespace LoginEncrpyt
             }
             finally
             {
-                con.connClose();
+                con.LoginConnClose();
             }
 
         }

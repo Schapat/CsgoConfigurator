@@ -74,13 +74,8 @@
     <Compile Include="Client.Designer.cs">
       <DependentUpon>Client.cs</DependentUpon>
     </Compile>
-    <Compile Include="Directorys.cs" />
-    <Compile Include="DriverInfo.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RarController.cs" />
-    <Compile Include="SteamDirectoryPath.cs" />
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,9 +113,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Backup\Backup.csproj">
+      <Project>{5168534e-c007-40ea-927e-c6e19fc1bf4d}</Project>
+      <Name>Backup</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MySqlConnection\MySqlConnection.csproj">
       <Project>{c5550f52-d2c9-4bce-9eab-304afcd21cae}</Project>
       <Name>MySqlConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Steam\Steam.csproj">
+      <Project>{65ce4640-2674-4131-8f37-8e7c1b084622}</Project>
+      <Name>Steam</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

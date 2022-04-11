@@ -5,47 +5,41 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MySqlDatabase;
 
-namespace MySqlDatabase
+namespace Backup
 {
-    public class DatabaseCommunication
+    public class BackupController
     {
-        string ConnectionString = "server=127.0.0.1; database=documentssystem; Uid=root; password=;";
-        private MySqlConnection GetConnection()
+        Connection conn = new Connection();
+        public void SaveFile(BackupData pcp)
         {
-            return new MySqlConnection(ConnectionString);
-        }
-
-        public void SaveFile(string filePath)
-        {
-            using (Stream stream = File.OpenRead(filePath))
+        
+            using (Stream stream = File.OpenRead(""))
             {
                 byte[] buffer = new byte[stream.Length];
                 stream.Read(buffer, 0, buffer.Length);
-
-                string extn = new FileInfo(filePath).Extension;
-                string fileName = new FileInfo(filePath).Name;
                 string uploadTime = DateTime.Now.ToString("dd.MM.yyyy hh.mm.ss");
-                string query = "INSERT INTO backups (FileName, Config, Extension, UploadTime) VALUES (@filename, @config, @extn, @uploadTime)";
+                string query = "INSERT INTO backups (Config, Autoexec, Video, Username, UploadTime) VALUES (@cofig, @autoexec, @video,@username, @uploadTime)";
 
-                using (MySqlConnection cn = GetConnection())
+                using (MySqlConnection cn = conn.GetBackupConnection())
                 {
                     MySqlCommand cmd = new MySqlCommand(query, cn);
-                    cmd.Parameters.Add("@fileName", MySqlDbType.VarChar).Value = fileName;
-                    cmd.Parameters.Add("@uploadTime", MySqlDbType.VarChar).Value = uploadTime;
                     cmd.Parameters.Add("@config", MySqlDbType.LongBlob).Value = buffer;
-                    cmd.Parameters.Add("@extn", MySqlDbType.VarChar).Value = extn;
+                    cmd.Parameters.Add("@autoexec", MySqlDbType.LongBlob).Value = buffer;
+                    cmd.Parameters.Add("@video", MySqlDbType.LongBlob).Value = buffer;
+                    cmd.Parameters.Add("@uploadTime", MySqlDbType.VarChar).Value = uploadTime;
                     cn.Open();
                     cmd.ExecuteNonQuery();
                 }
             }
+            
         }
 
         public DataTable LoadFile()
         {
-            using(MySqlConnection cn = GetConnection())
+            using(MySqlConnection cn = conn.GetBackupConnection())
             {
                 string query = "SELECT FileName, UploadTime FROM backups";
                 MySqlDataAdapter adp = new MySqlDataAdapter(query, cn);
@@ -62,7 +56,7 @@ namespace MySqlDatabase
 
         public void DownloadBackup(string fileName, string steamCfgPath)
         {
-            using (MySqlConnection cn = GetConnection())
+            using (MySqlConnection cn = conn.GetBackupConnection())
             {
                 string query = "SELECT Config, Extension, FileName FROM backups WHERE FileName=@fileName";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
