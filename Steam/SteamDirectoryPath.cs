@@ -16,7 +16,7 @@ namespace Steam
         {
             this.steamDir = steamDir;
             this.accountDir = accountDir;
-            this.cfgDir = cfgDir;
+            this.cfgDir = cfgDir + "\\";
         }
         
         //ctor für manuellen cfg path

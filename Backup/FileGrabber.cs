@@ -34,7 +34,6 @@ namespace Backup
                     playerConfigurationPath.video = cfgFile;
                 }
             }
-
             return playerConfigurationPath;
         }
     }

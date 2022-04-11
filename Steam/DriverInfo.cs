@@ -9,9 +9,7 @@ namespace Steam
 {
     public class DriverInfo
     {
-        public List<String> drivers;
-        
-        
+        public List<String> drivers;        
 
         public DriverInfo()
         {

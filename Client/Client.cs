@@ -20,48 +20,25 @@ namespace Client
         public Client()
         {
             InitializeComponent();
-
             LaunchGUI1();
+            dataGridView1.DataSource = dc.LoadFile();
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
-        {
-            //das muss veraendert werden. neue klasse?
-            //rar.UnrarCompleteFiles(".\\cfg\\Se0rFPS.rar", fileFinder.CfgDir);
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            //fileFinder.CfgDir = fileFinder.CreateCfgDirPath(comboBox2.Text);
-            //Properties.Settings.Default.User = "hi";
-            //Properties.Settings.Default.Upgrade();
-            //Properties.Settings.Default.Save();
-            //Properties.Settings.Default.Reload();
-
-        }
-        /// <summary>
-        /// //////////////////////////////////////////////////////////////////////////////
-        /// /////////////////////////////////////////////////////////////////////////////
-        /// </summary>
-        /*
-        private void LaunchGUI()
-        {
-            var filePath = fileFinder.accDir;
-
-            if (filePath.Count != 0)
+        private void LaunchGUI1()
+        {           
+            SteamDirectorys directorys = new SteamDirectorys();
+            var steamDirectorys = directorys.FindSteamDirectorys();
+            foreach (var steamDirectory in steamDirectorys)
             {
-                //GUI
-                metroLabel3.Text = "Select your cfg folder";
-                comboBox2.Text = "...";
-
-                //Fill COMBOBOX WITH CFG PATH
-                foreach (var path in filePath)
-                {
-                    comboBox2.Items.Add(path);
-                }
+                comboBox2.Items.Add(steamDirectory.cfgDir);                
             }
-            else
+            
+            if(steamDirectorys.Count != 0)
+            {
+                comboBox2.SelectedIndex = 0;
+            }          
+            
+            if(steamDirectorys.Count == 0)
             {
                 //LOAD GUI FOR MANUAL PATH FINDING
                 metroLabel3.Text = "Example path:";
@@ -69,51 +46,27 @@ namespace Client
                 metroLabel1.Text = "No folder found. Pls Select manually";
                 metroButton1.Visible = true;
                 metroLabel1.Visible = true;
-            }
+                metroLabel3.Visible = true;
+            }           
         }
-        */
-        private void LaunchGUI1()
+
+        private void downloadButton_Click(object sender, EventArgs e)
         {
-            SteamDirectorys directorys = new SteamDirectorys();
-            var steamDirectorys = directorys.FindSteamDirectorys();
-            foreach (var steamDirectory in steamDirectorys)
-            {
-                comboBox2.Items.Add(steamDirectory.cfgDir);                
-            }
-            comboBox2.SelectedIndex = 0;
-            
-        }
-        private void metroTile2_Click(object sender, EventArgs e)
-        {
+            List<String>selected = new List<String>();
             var selectedCell = dataGridView1.SelectedCells;
             foreach(var cell in selectedCell)
             {
-                string name = (string)((DataGridViewCell)cell).Value;
-                dc.DownloadBackup(name, ".\\cfg\\");
+                selected.Add((string)((DataGridViewCell)cell).Value);               
             }
+            dc.DownloadBackup(selected, comboBox2.Text);
         }
 
-        private void testButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_ColumnStateChanged(object sender, DataGridViewColumnStateChangedEventArgs e)
-        {
-           
-            
-        }
-
-        private void metroTile1_Click_1(object sender, EventArgs e)
+        private void uploadButton_Click(object sender, EventArgs e)
         {
             FileGrabber fg = new FileGrabber();
-            var playerConfigurationPath = fg.SearchConfigurationFiles(comboBox2.Text);
-            var playerConfigurationPaths = playerConfigurationPath;
-            dc.SaveFile(playerConfigurationPaths);
+            var backupFiles = fg.SearchConfigurationFiles(comboBox2.Text);
+            dc.SaveFile(backupFiles);
             dataGridView1.DataSource = dc.LoadFile();
-
         }
     }
-
-   
 }
