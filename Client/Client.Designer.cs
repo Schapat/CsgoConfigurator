@@ -52,6 +52,7 @@
             this.htmlPanel3 = new MetroFramework.Drawing.Html.HtmlPanel();
             this.testLabel = new MetroFramework.Controls.MetroLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.changeConfig.SuspendLayout();
             this.metroTile2.SuspendLayout();
             this.testButton.SuspendLayout();
@@ -349,11 +350,44 @@
             this.dataGridView1.Size = new System.Drawing.Size(218, 150);
             this.dataGridView1.TabIndex = 24;
             // 
+            // metroTextBox3
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox3.CustomButton.Image = null;
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.metroTextBox3.CustomButton.Name = "";
+            this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox3.CustomButton.TabIndex = 1;
+            this.metroTextBox3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox3.CustomButton.UseSelectable = true;
+            this.metroTextBox3.CustomButton.Visible = false;
+            this.metroTextBox3.Lines = new string[] {
+        "BackupName"};
+            this.metroTextBox3.Location = new System.Drawing.Point(262, 440);
+            this.metroTextBox3.MaxLength = 32767;
+            this.metroTextBox3.Name = "metroTextBox3";
+            this.metroTextBox3.PasswordChar = '\0';
+            this.metroTextBox3.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox3.SelectedText = "";
+            this.metroTextBox3.SelectionLength = 0;
+            this.metroTextBox3.SelectionStart = 0;
+            this.metroTextBox3.ShortcutsEnabled = true;
+            this.metroTextBox3.Size = new System.Drawing.Size(75, 23);
+            this.metroTextBox3.TabIndex = 25;
+            this.metroTextBox3.Text = "BackupName";
+            this.metroTextBox3.UseSelectable = true;
+            this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 613);
+            this.Controls.Add(this.metroTextBox3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.testLabel);
             this.Controls.Add(this.testButton);
@@ -412,6 +446,7 @@
         private MetroFramework.Drawing.Html.HtmlPanel htmlPanel3;
         private MetroFramework.Controls.MetroLabel testLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private MetroFramework.Controls.MetroTextBox metroTextBox3;
     }
 }
 

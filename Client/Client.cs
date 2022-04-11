@@ -14,15 +14,13 @@ namespace Client
 {
     public partial class Client : MetroFramework.Forms.MetroForm
     {
-        private Rar rar;
-        private Backup backup;
-
+        private RarController rar;
         DatabaseCommunication dc = new DatabaseCommunication();
         public Client()
         {
             InitializeComponent();
 
-            rar = new Rar();
+            rar = new RarController();
             LaunchGUI1();
         }
 
@@ -80,10 +78,9 @@ namespace Client
             var steamDirectorys = directorys.FindSteamDirectorys();
             foreach (var steamDirectory in steamDirectorys)
             {
-                comboBox2.Items.Add(steamDirectory.steamDir);
-                comboBox2.Items.Add(steamDirectory.accountDir);
-                comboBox2.Items.Add(steamDirectory.cfgDir);
+                comboBox2.Items.Add(steamDirectory.cfgDir);                
             }
+            comboBox2.SelectedIndex = 0;
             
         }
         private void metroTile2_Click(object sender, EventArgs e)
@@ -98,7 +95,6 @@ namespace Client
 
         private void testButton_Click(object sender, EventArgs e)
         {
-
             dc.SaveFile(".\\cfg\\Username.rar");
             dataGridView1.DataSource = dc.LoadFile();
 

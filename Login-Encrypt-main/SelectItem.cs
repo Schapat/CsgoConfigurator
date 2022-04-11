@@ -28,6 +28,8 @@ namespace LoginEncrpyt
                 if (reader.Read())
                 {
                     System.Windows.Forms.MessageBox.Show("Hi :D", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                    Client.Client clt = new Client.Client();
+                    clt.ShowDialog();
                 }
                 else
                 {
