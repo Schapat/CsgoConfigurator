@@ -75,3 +75,22 @@ For details on the xml on the server with update information, please check out t
 
 # Acknowledgments
 SharpUpdate is modified from AutoUpdater by BetterCoder on Youtube. His tutorial can be found here: http://goo.gl/n7btY
+
+
+
+# Upload Files to MySQL Database
+
+use miniprogramm for encryption decrytion from ascent
+
+uploads files and saves them into a SQL database as binary data
+
+#The Idea
+
+TABLE Backup
+username | cfg | autoexec | video 
+
+TABLE ProConfig
+Playername | cfg | autoexec | video
+
+DatabaseCommunication.cs
+(all mysql statements) 
