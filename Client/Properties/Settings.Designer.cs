@@ -22,17 +22,5 @@ namespace Client.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("no")]
-        public string User {
-            get {
-                return ((string)(this["User"]));
-            }
-            set {
-                this["User"] = value;
-            }
-        }
     }
 }
