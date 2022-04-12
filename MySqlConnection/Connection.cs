@@ -13,8 +13,8 @@ namespace MySqlDatabase
     {
         public MySqlConnection connLogin;
 
-        string loginConnectionString = "server=127.0.0.1; database=login; Uid=root; password=;";
-        string backupConnectionString = "f+F5FnPCwvgK7+GP6Z458tUkVBXqTvu+l7noAAP9yksAOnT99mZjRScS76A/YWG5XmHFJW+bHsx5r47NSYknVNnRK+vCd23AQeIwwrykjvh4PL6q3ublL0xkHlzfe2PbUsG+E41vDIMOjriykJYLLm5meifmQw1SpKIzemLKqrHvj3voJVn6HdnG5f7kliRW";
+        //string ConnectionString = "server=127.0.0.1; database=ascent_csgo; Uid=root; password=;";
+        string ConnectionString = "f+F5FnPCwvgK7+GP6Z458tUkVBXqTvu+l7noAAP9yksAOnT99mZjRScS76A/YWG55K0ir+GGqUGMyr8X4j6jVk39zMd9seG7S+/4Oqhwb1tB1HEzTaQLpUuOYmdC8G37tHNjDou+dCPuJAMypRIuyjLqGJVQ7u0iPdG35l+XBHA=";
         string salt = "jk359sdi910dsa";
         //string backupConnectionString = "server=127.0.0.1; database=documentssystem; Uid=root; password=;";
 
@@ -40,14 +40,14 @@ namespace MySqlDatabase
             return encryptedText;
         }
 
-            public MySqlConnection GetBackupConnection()
+        public MySqlConnection GetBackupConnection()
         {
-            return new MySqlConnection(Decrypt(backupConnectionString,salt));
+            return new MySqlConnection(Decrypt(ConnectionString,salt));
         }
 
         public MySqlConnection GetLoginConnection()
         {
-            return this.connLogin = new MySqlConnection(loginConnectionString);
+            return this.connLogin = new MySqlConnection(Decrypt(ConnectionString,salt));
         }
 
         public void LoginConnOpen()

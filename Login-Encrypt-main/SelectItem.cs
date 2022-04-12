@@ -20,7 +20,7 @@ namespace LoginEncrpyt
                 con.GetLoginConnection();
                 con.LoginConnOpen();
                 MySqlCommand command = new MySqlCommand();
-                command.CommandText = ("Select * from users where (userName, Password) = (@name, @password)");
+                command.CommandText = ("Select * from users where (Username, Password) = (@name, @password)");
                 command.Parameters.AddWithValue("@name", userInsert);
                 command.Parameters.AddWithValue("@password", Encrypt.HashString(passInsert));
                 command.Connection = con.connLogin;
@@ -28,7 +28,9 @@ namespace LoginEncrpyt
 
                 if (reader.Read())
                 {
-                    System.Windows.Forms.MessageBox.Show("Hi :D", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                    //System.Windows.Forms.MessageBox.Show("Hi :D", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                    Session.username = (string)reader["Username"];
+                    Session.userID = (int)reader["ID"];
                     Client.Client clt = new Client.Client();
                     clt.ShowDialog();
                 }
