@@ -14,7 +14,7 @@ using Backup;
 
 namespace Client
 {
-    public partial class Client : MetroFramework.Forms.MetroForm
+    public partial class Client : Form
     {
         BackupController dc = new BackupController();
         public Client()

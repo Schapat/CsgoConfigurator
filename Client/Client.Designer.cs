@@ -28,25 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.changeConfig = new MetroFramework.Controls.MetroTile();
-            this.htmlPanel1 = new MetroFramework.Drawing.Html.HtmlPanel();
+            this.changeConfig = new System.Windows.Forms.Button();
+            this.htmlPanel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.metroLink2 = new MetroFramework.Controls.MetroLink();
-            this.downloadButton = new MetroFramework.Controls.MetroTile();
-            this.htmlPanel2 = new MetroFramework.Drawing.Html.HtmlPanel();
-            this.uploadButton = new MetroFramework.Controls.MetroTile();
-            this.htmlPanel3 = new MetroFramework.Drawing.Html.HtmlPanel();
+            this.metroButton1 = new System.Windows.Forms.Button();
+            this.metroLabel1 = new System.Windows.Forms.Label();
+            this.metroLabel3 = new System.Windows.Forms.Label(); 
+            this.metroLabel4 = new System.Windows.Forms.Label();
+            this.metroLabel5 = new System.Windows.Forms.Label();
+            this.downloadButton = new System.Windows.Forms.Button();
+            this.htmlPanel2 = new System.Windows.Forms.Panel();
+            this.uploadButton = new System.Windows.Forms.Button();
+            this.htmlPanel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.changeConfig.SuspendLayout();
             this.downloadButton.SuspendLayout();
@@ -56,14 +54,12 @@
             // 
             // changeConfig
             // 
-            this.changeConfig.ActiveControl = null;
             this.changeConfig.Controls.Add(this.htmlPanel1);
             this.changeConfig.Location = new System.Drawing.Point(113, 249);
             this.changeConfig.Name = "changeConfig";
             this.changeConfig.Size = new System.Drawing.Size(112, 62);
             this.changeConfig.TabIndex = 1;
             this.changeConfig.Text = "change config";
-            this.changeConfig.UseSelectable = true;
             // 
             // htmlPanel1
             // 
@@ -142,7 +138,6 @@
             this.metroButton1.Size = new System.Drawing.Size(110, 23);
             this.metroButton1.TabIndex = 11;
             this.metroButton1.Text = "Find File";
-            this.metroButton1.UseSelectable = true;
             this.metroButton1.Visible = false;
             // 
             // metroLabel1
@@ -184,34 +179,14 @@
             this.metroLabel5.TabIndex = 15;
             this.metroLabel5.Text = "STEP 2";
             // 
-            // metroLink1
-            // 
-            this.metroLink1.Location = new System.Drawing.Point(323, 473);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(75, 23);
-            this.metroLink1.TabIndex = 16;
-            this.metroLink1.Text = "metroLink1";
-            this.metroLink1.UseSelectable = true;
-            // 
-            // metroLink2
-            // 
-            this.metroLink2.Location = new System.Drawing.Point(404, 473);
-            this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(75, 23);
-            this.metroLink2.TabIndex = 17;
-            this.metroLink2.Text = "metroLink2";
-            this.metroLink2.UseSelectable = true;
-            // 
             // downloadButton
             // 
-            this.downloadButton.ActiveControl = null;
             this.downloadButton.Controls.Add(this.htmlPanel2);
             this.downloadButton.Location = new System.Drawing.Point(367, 395);
             this.downloadButton.Name = "downloadButton";
             this.downloadButton.Size = new System.Drawing.Size(112, 72);
             this.downloadButton.TabIndex = 18;
             this.downloadButton.Text = "Download";
-            this.downloadButton.UseSelectable = true;
             this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
             // htmlPanel2
@@ -227,14 +202,12 @@
             // 
             // uploadButton
             // 
-            this.uploadButton.ActiveControl = null;
             this.uploadButton.Controls.Add(this.htmlPanel3);
             this.uploadButton.Location = new System.Drawing.Point(367, 317);
             this.uploadButton.Name = "uploadButton";
             this.uploadButton.Size = new System.Drawing.Size(112, 72);
             this.uploadButton.TabIndex = 22;
             this.uploadButton.Text = "Upload";
-            this.uploadButton.UseSelectable = true;
             this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
             // 
             // htmlPanel3
@@ -276,8 +249,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.downloadButton);
-            this.Controls.Add(this.metroLink2);
-            this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
@@ -303,25 +274,23 @@
         }
 
         #endregion
-        private MetroFramework.Controls.MetroTile changeConfig;
+        private System.Windows.Forms.Button changeConfig;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Drawing.Html.HtmlPanel htmlPanel1;
+        private System.Windows.Forms.Label  metroLabel2;
+        private System.Windows.Forms.Panel htmlPanel1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLink metroLink1;
-        private MetroFramework.Controls.MetroLink metroLink2;
-        private MetroFramework.Controls.MetroTile downloadButton;
-        private MetroFramework.Drawing.Html.HtmlPanel htmlPanel2;
-        private MetroFramework.Controls.MetroTile uploadButton;
-        private MetroFramework.Drawing.Html.HtmlPanel htmlPanel3;
+        private System.Windows.Forms.Button metroButton1;
+        private System.Windows.Forms.Label metroLabel1;
+        private System.Windows.Forms.Label metroLabel3;
+        private System.Windows.Forms.Label metroLabel4;
+        private System.Windows.Forms.Label metroLabel5;
+        private System.Windows.Forms.Button downloadButton;
+        private System.Windows.Forms.Panel htmlPanel2;
+        private System.Windows.Forms.Button uploadButton;
+        private System.Windows.Forms.Panel htmlPanel3;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -51,6 +51,7 @@ namespace Backup
             using (MySqlConnection cn = conn.GetBackupConnection())
             {
                 MySqlCommand cmd = new MySqlCommand(query, cn);
+                
                 cmd.Parameters.Add("@config", MySqlDbType.LongBlob).Value = config;
                 cmd.Parameters.Add("@autoexec", MySqlDbType.LongBlob).Value = autoexec;
                 cmd.Parameters.Add("@video", MySqlDbType.LongBlob).Value = video;
@@ -58,6 +59,7 @@ namespace Backup
                 cmd.Parameters.Add("@username", MySqlDbType.VarChar).Value = backupData.name;
                 cn.Open();
                 cmd.ExecuteNonQuery();
+                cn.Close();
             }
         }
 
@@ -96,6 +98,7 @@ namespace Backup
 
                     File.WriteAllBytes(filePath, config);
                 }
+                cn.Close();
             }
 
             using (MySqlConnection cn = conn.GetBackupConnection())
@@ -114,6 +117,7 @@ namespace Backup
 
                     File.WriteAllBytes(filePath, video);
                 }
+                cn.Close();
             }
 
             using (MySqlConnection cn = conn.GetBackupConnection())
@@ -132,6 +136,7 @@ namespace Backup
 
                     File.WriteAllBytes(filePath, config);
                 }
+                cn.Close();
             }
         }
     }
