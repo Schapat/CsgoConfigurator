@@ -65,7 +65,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="insertData.cs" />
     <Compile Include="Login.cs">
@@ -134,6 +133,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Client\Client.csproj">
+      <Project>{766aec1d-202e-4480-9bf4-0f2c9da1afda}</Project>
+      <Name>Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MySqlConnection\MySqlConnection.csproj">
+      <Project>{c5550f52-d2c9-4bce-9eab-304afcd21cae}</Project>
+      <Name>MySqlConnection</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

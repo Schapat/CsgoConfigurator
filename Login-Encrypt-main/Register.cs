@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySqlDatabase;
 
 namespace LoginEncrpyt
 {
@@ -22,9 +23,13 @@ namespace LoginEncrpyt
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (txtPass.PasswordChar == '*')
+            {
                 txtPass.PasswordChar = '\0';
+            }
             else
+            {
                 txtPass.PasswordChar = '*';
+            }               
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -32,9 +37,11 @@ namespace LoginEncrpyt
             string fecha = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
             if (txtUser.Text.Length < 3 || txtPass.Text.Length < 3)
-                MessageBox.Show("Username or password is invalid or is short!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            insrtd.InsertData(txtUser.Text, txtPass.Text, fecha);
-
+            {
+                MessageBox.Show("Username or password is invalid or is short!", 
+                    "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                insrtd.InsertData(txtUser.Text, txtPass.Text, fecha);
+            }               
         }
     }
 }
