@@ -38,8 +38,16 @@ namespace LoginEncrpyt
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUser.Text.Length < 3 || txtPass.Text.Length < 3)
-                MessageBox.Show("Username or password is invalid or is short!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);     
-            slct.SelectData(txtUser.Text, txtPass.Text);
+            {
+                MessageBox.Show("Username or password is invalid or is short!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                this.Visible = false;
+                slct.SelectData(txtUser.Text, txtPass.Text);
+            }
+                   
+            
         }
     }
 }

@@ -38,10 +38,17 @@ namespace LoginEncrpyt
 
             if (txtUser.Text.Length < 3 || txtPass.Text.Length < 3)
             {
-                MessageBox.Show("Username or password is invalid or is short!", 
+                MessageBox.Show("Username or password is invalid or is short!",
                     "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
                 insrtd.InsertData(txtUser.Text, txtPass.Text, fecha);
-            }               
+                this.Close();
+            }
+                
+            
+                          
         }
     }
 }

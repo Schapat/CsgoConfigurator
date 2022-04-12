@@ -59,6 +59,7 @@ namespace Client
                 selected.Add((string)((DataGridViewCell)cell).Value);               
             }
             dc.DownloadBackup(selected, comboBox2.Text);
+            System.Windows.Forms.MessageBox.Show("Download Complete", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
         }
 
         private void uploadButton_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace LoginEncrpyt
                 con.GetLoginConnection();
                 con.LoginConnOpen();
                 MySqlCommand command = new MySqlCommand();
-                command.CommandText = "INSERT INTO users (userName, Password, Registered) values (@name, @password, @datetime)";
+                command.CommandText = "INSERT INTO users (Username, Password, Registered) values (@name, @password, @datetime)";
                 command.Parameters.AddWithValue("@name", userInsert);
                 command.Parameters.AddWithValue("@password", Encrypt.HashString(passInsert));
                 command.Parameters.AddWithValue("@datetime", insertDateTime);
