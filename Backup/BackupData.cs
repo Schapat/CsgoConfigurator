@@ -18,5 +18,10 @@ namespace Backup
         {
             name = "backup";
         }
+
+        public void getUser()
+        {
+
+        }
     }
 }
