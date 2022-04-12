@@ -52,14 +52,21 @@ namespace Client
 
         private void downloadButton_Click(object sender, EventArgs e)
         {
-            List<String>selected = new List<String>();
+            List<String> selected = new List<String>();
             var selectedCell = dataGridView1.SelectedCells;
-            foreach(var cell in selectedCell)
+            if (selectedCell.Count != 0)
             {
-                selected.Add((string)((DataGridViewCell)cell).Value);               
+                foreach (var cell in selectedCell)
+                {
+                    selected.Add((string)((DataGridViewCell)cell).Value);
+                }
+                dc.DownloadBackup(selected, comboBox2.Text);
+                System.Windows.Forms.MessageBox.Show("Download Complete", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
             }
-            dc.DownloadBackup(selected, comboBox2.Text);
-            System.Windows.Forms.MessageBox.Show("Download Complete", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Create Backup first", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            }
         }
 
         private void uploadButton_Click(object sender, EventArgs e)
