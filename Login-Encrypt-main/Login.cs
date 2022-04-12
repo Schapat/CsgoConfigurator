@@ -43,7 +43,6 @@ namespace LoginEncrpyt
             }
             else
             {
-                this.Visible = false;
                 slct.SelectData(txtUser.Text, txtPass.Text);
             }
                    

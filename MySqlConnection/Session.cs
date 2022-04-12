@@ -10,6 +10,5 @@ namespace MySqlDatabase
     {
         public static string username;
         public static int userID;
-        public static bool aktive;
     }
 }

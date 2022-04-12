@@ -76,5 +76,10 @@ namespace Client
             dc.SaveFile(backupFiles);
             dataGridView1.DataSource = dc.LoadFile();
         }
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

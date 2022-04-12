@@ -15,13 +15,7 @@ namespace Backup
         public string video;
 
         public BackupData()
-        {
-            name = "backup";
-        }
-
-        public void getUser()
-        {
-
+        {   
         }
     }
 }

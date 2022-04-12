@@ -57,7 +57,7 @@ namespace Backup
                 cmd.Parameters.Add("@video", MySqlDbType.LongBlob).Value = video;
                 cmd.Parameters.Add("@uploadTime", MySqlDbType.VarChar).Value = uploadTime;
                 cmd.Parameters.Add("@userID", MySqlDbType.Int32).Value = Session.userID;
-                cmd.Parameters.Add("@BackupName", MySqlDbType.VarChar).Value = Session.username;
+                cmd.Parameters.Add("@BackupName", MySqlDbType.VarChar).Value = backupData.name;
                 cn.Open();
                 cmd.ExecuteNonQuery();
                 cn.Close();
