@@ -59,15 +59,5 @@ namespace Client.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
-        /// </summary>
-        internal static byte[] Se0rFPS {
-            get {
-                object obj = ResourceManager.GetObject("Se0rFPS", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
