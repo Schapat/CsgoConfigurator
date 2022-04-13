@@ -76,9 +76,12 @@ namespace Client
             if (dc.CheckBackupCount())
             {
                 dc.SaveFile(backupFiles);
+                dataGridView1.DataSource = dc.LoadFile();
+            }else
+            {
                 MessageBox.Show("BackupFull","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            dataGridView1.DataSource = dc.LoadFile();
+            
         }
 
         private void Client_Load(object sender, EventArgs e)

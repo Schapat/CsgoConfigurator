@@ -31,12 +31,12 @@ namespace Backup
                 cn.Open();
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-
-                    if (count >= maxBackups)
-                    {
-                        cn.Close();
-                        return true;
-                    }
+                if (count < maxBackups)
+                {
+                    cn.Close();
+                    return true;
+                }
+                cn.Close();
                 return false;
             }      
         }
