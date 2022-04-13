@@ -22,7 +22,6 @@ namespace Backup
             backupData.name ="Account: "+ regEx.Match(cfgDir).ToString() ;
 
             var cfgFiles = Directory.GetFiles(cfgDir);
-
             foreach (var cfgFile in cfgFiles)
             {
                 if (cfgFile.Contains("config.cfg"))
