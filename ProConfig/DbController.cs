@@ -33,7 +33,6 @@ namespace ProConfig
                 }
                 cn.Close();
             }
-
         }
 
         public void downloadAutoexec(string playerName, string steamCfgPath)
@@ -55,7 +54,6 @@ namespace ProConfig
                 }
                 cn.Close();
             }
-
         }
 
         public void downloadVideo(string playerName, string steamCfgPath)
@@ -77,7 +75,6 @@ namespace ProConfig
                 }
                 cn.Close();
             }
-
         }
 
         public bool CheckConfigExists(string playerName)
@@ -89,7 +86,6 @@ namespace ProConfig
                 cmd.Parameters.Add("@playerName", MySqlDbType.VarChar).Value = playerName;
                 cn.Open();
                 var reader = cmd.ExecuteReader();
-                
                 if(reader.FieldCount > 0)
                 {
                     return true;
