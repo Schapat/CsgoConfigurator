@@ -40,7 +40,7 @@ namespace MySqlCommunication
             return encryptedText;
         }
 
-        public MySqlConnection GetBackupConnection()
+        public MySqlConnection GetConnection()
         {
             return new MySqlConnection(Decrypt(ConnectionString,salt));
         }

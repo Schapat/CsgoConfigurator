@@ -10,7 +10,7 @@ using MySqlCommunication;
 
 namespace Backup
 {
-    public class Controller
+    public class DbController
     {
         Connection conn = new Connection();
         string query;
@@ -18,6 +18,29 @@ namespace Backup
         byte[] video = new byte[0];
         byte[] autoexec = new byte[0];
         string uploadTime;
+        int maxBackups = 10;
+
+
+        public bool CheckBackupCount()
+        {
+            using (MySqlConnection cn = conn.GetConnection())
+            {
+                string query = "SELECT COUNT(*) FROM backup WHERE UserID=@userID";
+                MySqlCommand cmd = new MySqlCommand(query, cn);
+                cmd.Parameters.Add("@userID", MySqlDbType.VarChar).Value = Session.userID;
+                cn.Open();
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+                    if (count >= maxBackups)
+                    {
+                        cn.Close();
+                        return true;
+                    }
+                return false;
+            }      
+        }
+
         public void SaveFile(Data backupData)
         {
             if (backupData.config != null)
@@ -48,7 +71,7 @@ namespace Backup
             uploadTime = DateTime.Now.ToString("dd.MM.yyyy hh.mm.ss");
             query = "INSERT INTO backup (Config, Autoexec, Video, UserID, UploadTime, BackupName) VALUES (@config, @autoexec, @video, @userID, @uploadTime, @BackupName)";
 
-            using (MySqlConnection cn = conn.GetBackupConnection())
+            using (MySqlConnection cn = conn.GetConnection())
             {
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 
@@ -68,7 +91,7 @@ namespace Backup
         {
             string query = "SELECT BackupName, UploadTime FROM backup WHERE UserID=@userID";
 
-            using (MySqlConnection cn = conn.GetBackupConnection())
+            using (MySqlConnection cn = conn.GetConnection())
             {
                 MySqlDataAdapter adp = new MySqlDataAdapter(query, cn);
                 adp.SelectCommand.Parameters.Add("@userID",MySqlDbType.Int64).Value = Session.userID;
@@ -86,7 +109,7 @@ namespace Backup
 
         public void DownloadBackup(List<String> identifier, string steamCfgPath)
         {          
-            using (MySqlConnection cn = conn.GetBackupConnection())
+            using (MySqlConnection cn = conn.GetConnection())
             {
                 string query = "SELECT Config FROM backup WHERE BackupName=@backupName AND UploadTime=@uploadTime AND UserID=@userID";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
@@ -106,7 +129,7 @@ namespace Backup
                 cn.Close();
             }
 
-            using (MySqlConnection cn = conn.GetBackupConnection())
+            using (MySqlConnection cn = conn.GetConnection())
             {
                 string query = "SELECT Video FROM backup WHERE BackupName=@backupName AND UploadTime=@uploadTime AND UserID=@userID";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
@@ -126,7 +149,7 @@ namespace Backup
                 cn.Close();
             }
 
-            using (MySqlConnection cn = conn.GetBackupConnection())
+            using (MySqlConnection cn = conn.GetConnection())
             {
                 string query = "SELECT Autoexec FROM backup WHERE BackupName=@backupName AND UploadTime=@uploadTime AND UserID=@userID";
                 MySqlCommand cmd = new MySqlCommand(query, cn);

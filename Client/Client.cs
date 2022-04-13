@@ -16,7 +16,7 @@ namespace Client
 {
     public partial class Client : Form
     {
-        Controller dc = new Controller();
+        DbController dc = new DbController();
         public Client()
         {
             InitializeComponent();
@@ -73,7 +73,11 @@ namespace Client
         {
             FileGrabber fg = new FileGrabber();
             var backupFiles = fg.SearchConfigurationFiles(comboBox2.Text);
-            dc.SaveFile(backupFiles);
+            if (dc.CheckBackupCount())
+            {
+                dc.SaveFile(backupFiles);
+                MessageBox.Show("BackupFull","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             dataGridView1.DataSource = dc.LoadFile();
         }
 
