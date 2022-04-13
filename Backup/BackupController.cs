@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using MySqlDatabase;
+using MySqlCommunication;
 
 namespace Backup
 {

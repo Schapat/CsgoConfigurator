@@ -99,9 +99,9 @@
       <Project>{5168534e-c007-40ea-927e-c6e19fc1bf4d}</Project>
       <Name>Backup</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySqlConnection\MySqlConnection.csproj">
+    <ProjectReference Include="..\MySqlConnection\MySqlCommunication.csproj">
       <Project>{c5550f52-d2c9-4bce-9eab-304afcd21cae}</Project>
-      <Name>MySqlConnection</Name>
+      <Name>MySqlCommunication</Name>
     </ProjectReference>
     <ProjectReference Include="..\Steam\Steam.csproj">
       <Project>{65ce4640-2674-4131-8f37-8e7c1b084622}</Project>

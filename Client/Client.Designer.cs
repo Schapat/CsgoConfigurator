@@ -36,7 +36,15 @@
             this.uploadButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.Backup = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panelBackup = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelMenu.SuspendLayout();
+            this.panelHeader.SuspendLayout();
+            this.panelBackup.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox2
@@ -47,16 +55,16 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.IntegralHeight = false;
             this.comboBox2.ItemHeight = 24;
-            this.comboBox2.Location = new System.Drawing.Point(26, 130);
+            this.comboBox2.Location = new System.Drawing.Point(69, 59);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(457, 32);
+            this.comboBox2.Size = new System.Drawing.Size(506, 32);
             this.comboBox2.TabIndex = 10;
             // 
             // metroButton1
             // 
             this.metroButton1.Font = new System.Drawing.Font("Agency FB", 18F);
             this.metroButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroButton1.Location = new System.Drawing.Point(26, 83);
+            this.metroButton1.Location = new System.Drawing.Point(69, 16);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(110, 41);
             this.metroButton1.TabIndex = 11;
@@ -67,7 +75,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.ForeColor = System.Drawing.Color.Red;
-            this.metroLabel1.Location = new System.Drawing.Point(142, 111);
+            this.metroLabel1.Location = new System.Drawing.Point(185, 43);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(65, 13);
             this.metroLabel1.TabIndex = 12;
@@ -79,7 +87,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Font = new System.Drawing.Font("Ink Free", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel3.ForeColor = System.Drawing.Color.Red;
-            this.metroLabel3.Location = new System.Drawing.Point(16, 9);
+            this.metroLabel3.Location = new System.Drawing.Point(22, 11);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(162, 60);
             this.metroLabel3.TabIndex = 13;
@@ -93,11 +101,11 @@
             this.downloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.downloadButton.Font = new System.Drawing.Font("Agency FB", 18F);
             this.downloadButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.downloadButton.Location = new System.Drawing.Point(247, 324);
+            this.downloadButton.Location = new System.Drawing.Point(452, 234);
             this.downloadButton.Name = "downloadButton";
-            this.downloadButton.Size = new System.Drawing.Size(236, 94);
+            this.downloadButton.Size = new System.Drawing.Size(123, 47);
             this.downloadButton.TabIndex = 18;
-            this.downloadButton.Text = "download Backup";
+            this.downloadButton.Text = "install CFG";
             this.downloadButton.UseVisualStyleBackColor = false;
             this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
@@ -109,9 +117,9 @@
             this.uploadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uploadButton.Font = new System.Drawing.Font("Agency FB", 18F);
             this.uploadButton.ForeColor = System.Drawing.Color.White;
-            this.uploadButton.Location = new System.Drawing.Point(26, 324);
+            this.uploadButton.Location = new System.Drawing.Point(452, 98);
             this.uploadButton.Name = "uploadButton";
-            this.uploadButton.Size = new System.Drawing.Size(215, 94);
+            this.uploadButton.Size = new System.Drawing.Size(123, 130);
             this.uploadButton.TabIndex = 22;
             this.uploadButton.Text = "do Backup";
             this.uploadButton.UseVisualStyleBackColor = false;
@@ -130,7 +138,7 @@
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 168);
+            this.dataGridView1.Location = new System.Drawing.Point(69, 98);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -140,7 +148,7 @@
             this.dataGridView1.RowTemplate.Height = 30;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(457, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(377, 183);
             this.dataGridView1.TabIndex = 24;
             // 
             // label1
@@ -148,34 +156,96 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(69, 55);
+            this.label1.Location = new System.Drawing.Point(27, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 25);
             this.label1.TabIndex = 25;
             this.label1.Text = "CsGo Configuration Backup";
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.Controls.Add(this.button2);
+            this.panelMenu.Controls.Add(this.Backup);
+            this.panelMenu.Location = new System.Drawing.Point(0, 132);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(220, 302);
+            this.panelMenu.TabIndex = 26;
+            // 
+            // panelHeader
+            // 
+            this.panelHeader.Controls.Add(this.metroLabel3);
+            this.panelHeader.Controls.Add(this.label1);
+            this.panelHeader.Location = new System.Drawing.Point(0, -2);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(220, 134);
+            this.panelHeader.TabIndex = 27;
+            // 
+            // Backup
+            // 
+            this.Backup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
+            this.Backup.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(21)))), ((int)(((byte)(219)))));
+            this.Backup.FlatAppearance.BorderSize = 3;
+            this.Backup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Backup.Font = new System.Drawing.Font("Agency FB", 18F);
+            this.Backup.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Backup.Location = new System.Drawing.Point(0, 0);
+            this.Backup.Name = "Backup";
+            this.Backup.Size = new System.Drawing.Size(220, 146);
+            this.Backup.TabIndex = 28;
+            this.Backup.Text = "Backup";
+            this.Backup.UseVisualStyleBackColor = false;
+            this.Backup.Click += new System.EventHandler(this.Backup_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(21)))), ((int)(((byte)(219)))));
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Agency FB", 18F);
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(0, 145);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(220, 146);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "Pro Configs";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panelBackup
+            // 
+            this.panelBackup.Controls.Add(this.comboBox2);
+            this.panelBackup.Controls.Add(this.metroButton1);
+            this.panelBackup.Controls.Add(this.downloadButton);
+            this.panelBackup.Controls.Add(this.dataGridView1);
+            this.panelBackup.Controls.Add(this.uploadButton);
+            this.panelBackup.Controls.Add(this.metroLabel1);
+            this.panelBackup.Location = new System.Drawing.Point(219, 132);
+            this.panelBackup.Name = "panelBackup";
+            this.panelBackup.Size = new System.Drawing.Size(628, 291);
+            this.panelBackup.TabIndex = 28;
             // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
-            this.ClientSize = new System.Drawing.Size(507, 435);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.uploadButton);
-            this.Controls.Add(this.downloadButton);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.metroButton1);
-            this.Controls.Add(this.comboBox2);
+            this.ClientSize = new System.Drawing.Size(846, 425);
+            this.Controls.Add(this.panelBackup);
+            this.Controls.Add(this.panelHeader);
+            this.Controls.Add(this.panelMenu);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Client";
             this.Text = "CS:GO Easy Config";
             this.Load += new System.EventHandler(this.Client_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelMenu.ResumeLayout(false);
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            this.panelBackup.ResumeLayout(false);
+            this.panelBackup.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -188,6 +258,11 @@
         private System.Windows.Forms.Button uploadButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Backup;
+        private System.Windows.Forms.Panel panelHeader;
+        private System.Windows.Forms.Panel panelBackup;
     }
 }
 

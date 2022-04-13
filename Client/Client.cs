@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySqlDatabase;
+using MySqlCommunication;
 using Steam;
 using Backup;
 
@@ -80,6 +80,16 @@ namespace Client
         private void Client_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Backup_Click(object sender, EventArgs e)
+        {
+            panelBackup.Visible = true; ;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelBackup.Visible=false;
         }
     }
 }

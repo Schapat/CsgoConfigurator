@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace MySqlDatabase
+namespace MySqlCommunication
 {
     public class Connection
     {

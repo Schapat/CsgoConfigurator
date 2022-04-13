@@ -93,9 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MySqlConnection\MySqlConnection.csproj">
+    <ProjectReference Include="..\MySqlConnection\MySqlCommunication.csproj">
       <Project>{c5550f52-d2c9-4bce-9eab-304afcd21cae}</Project>
-      <Name>MySqlConnection</Name>
+      <Name>MySqlCommunication</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

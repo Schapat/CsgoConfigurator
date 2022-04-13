@@ -139,9 +139,9 @@
       <Project>{766aec1d-202e-4480-9bf4-0f2c9da1afda}</Project>
       <Name>Client</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MySqlConnection\MySqlConnection.csproj">
+    <ProjectReference Include="..\MySqlConnection\MySqlCommunication.csproj">
       <Project>{c5550f52-d2c9-4bce-9eab-304afcd21cae}</Project>
-      <Name>MySqlConnection</Name>
+      <Name>MySqlCommunication</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

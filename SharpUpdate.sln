@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptString", "EncryptString\EncryptString.csproj", "{F32D8F0B-12EC-40B5-B937-BB017C608EC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlConnection", "MySqlConnection\MySqlConnection.csproj", "{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlCommunication", "MySqlConnection\MySqlCommunication.csproj", "{C5550F52-D2C9-4BCE-9EAB-304AFCD21CAE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steam", "Steam\Steam.csproj", "{65CE4640-2674-4131-8F37-8E7C1B084622}"
 EndProject
