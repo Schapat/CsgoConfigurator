@@ -87,8 +87,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackupData.cs" />
-    <Compile Include="BackupController.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="FileGrabber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

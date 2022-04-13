@@ -16,7 +16,7 @@ namespace Client
 {
     public partial class Client : Form
     {
-        BackupController dc = new BackupController();
+        Controller dc = new Controller();
         public Client()
         {
             InitializeComponent();
@@ -84,7 +84,7 @@ namespace Client
 
         private void Backup_Click(object sender, EventArgs e)
         {
-            panelBackup.Visible = true; ;
+            panelBackup.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -204,9 +204,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Agency FB", 18F);
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(0, 145);
+            this.button2.Location = new System.Drawing.Point(0, 149);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 146);
+            this.button2.Size = new System.Drawing.Size(220, 139);
             this.button2.TabIndex = 29;
             this.button2.Text = "Pro Configs";
             this.button2.UseVisualStyleBackColor = false;
