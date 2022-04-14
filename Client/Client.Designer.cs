@@ -37,10 +37,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.Backup = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.Backup = new System.Windows.Forms.Button();
+            this.panelHeader = new System.Windows.Forms.Panel();
             this.panelBackup = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelMenu.SuspendLayout();
             this.panelHeader.SuspendLayout();
@@ -101,7 +102,7 @@
             this.downloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.downloadButton.Font = new System.Drawing.Font("Agency FB", 18F);
             this.downloadButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.downloadButton.Location = new System.Drawing.Point(452, 234);
+            this.downloadButton.Location = new System.Drawing.Point(452, 188);
             this.downloadButton.Name = "downloadButton";
             this.downloadButton.Size = new System.Drawing.Size(123, 47);
             this.downloadButton.TabIndex = 18;
@@ -119,7 +120,7 @@
             this.uploadButton.ForeColor = System.Drawing.Color.White;
             this.uploadButton.Location = new System.Drawing.Point(452, 98);
             this.uploadButton.Name = "uploadButton";
-            this.uploadButton.Size = new System.Drawing.Size(123, 130);
+            this.uploadButton.Size = new System.Drawing.Size(123, 84);
             this.uploadButton.TabIndex = 22;
             this.uploadButton.Text = "do Backup";
             this.uploadButton.UseVisualStyleBackColor = false;
@@ -171,14 +172,21 @@
             this.panelMenu.Size = new System.Drawing.Size(220, 302);
             this.panelMenu.TabIndex = 26;
             // 
-            // panelHeader
+            // button2
             // 
-            this.panelHeader.Controls.Add(this.metroLabel3);
-            this.panelHeader.Controls.Add(this.label1);
-            this.panelHeader.Location = new System.Drawing.Point(0, -2);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(220, 134);
-            this.panelHeader.TabIndex = 27;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(21)))), ((int)(((byte)(219)))));
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Agency FB", 18F);
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(0, 149);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(220, 139);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "Pro Configs";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Backup
             // 
@@ -196,24 +204,18 @@
             this.Backup.UseVisualStyleBackColor = false;
             this.Backup.Click += new System.EventHandler(this.Backup_Click);
             // 
-            // button2
+            // panelHeader
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(21)))), ((int)(((byte)(219)))));
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Agency FB", 18F);
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(0, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 139);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Pro Configs";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.panelHeader.Controls.Add(this.metroLabel3);
+            this.panelHeader.Controls.Add(this.label1);
+            this.panelHeader.Location = new System.Drawing.Point(0, -2);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(220, 134);
+            this.panelHeader.TabIndex = 27;
             // 
             // panelBackup
             // 
+            this.panelBackup.Controls.Add(this.btnDelete);
             this.panelBackup.Controls.Add(this.comboBox2);
             this.panelBackup.Controls.Add(this.metroButton1);
             this.panelBackup.Controls.Add(this.downloadButton);
@@ -224,6 +226,22 @@
             this.panelBackup.Name = "panelBackup";
             this.panelBackup.Size = new System.Drawing.Size(628, 291);
             this.panelBackup.TabIndex = 28;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(21)))), ((int)(((byte)(219)))));
+            this.btnDelete.FlatAppearance.BorderSize = 3;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Agency FB", 18F);
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDelete.Location = new System.Drawing.Point(452, 241);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(123, 40);
+            this.btnDelete.TabIndex = 25;
+            this.btnDelete.Text = "delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Client
             // 
@@ -263,6 +281,7 @@
         private System.Windows.Forms.Button Backup;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Panel panelBackup;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

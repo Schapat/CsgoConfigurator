@@ -98,5 +98,25 @@ namespace Client
         {
             panelBackup.Visible=false;
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            List<String> selected = new List<String>();
+            var selectedCell = dataGridView1.SelectedCells;
+            if (selectedCell.Count != 0)
+            {
+                foreach (var cell in selectedCell)
+                {
+                    selected.Add((string)((DataGridViewCell)cell).Value);
+                }
+                dc.DeleteBackup(selected);
+                dataGridView1.DataSource = dc.LoadFile();
+                System.Windows.Forms.MessageBox.Show("Backup deleted", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("No Backup selected", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            }
+        }
     }
 }

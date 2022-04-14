@@ -18,7 +18,7 @@ namespace ProConfig
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
-                string query = "SELECT Config FROM ProPlayer WHERE PlayerName=@playerName";
+                string query = "SELECT Config FROM proPlayer WHERE PlayerName=@playerName";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 cmd.Parameters.Add("@playerName", MySqlDbType.VarChar).Value = playerName;
                 cn.Open();
@@ -39,7 +39,7 @@ namespace ProConfig
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
-                string query = "SELECT Autoexec FROM ProPlayer WHERE PlayerName=@playerName";
+                string query = "SELECT Autoexec FROM proPlayer WHERE PlayerName=@playerName";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 cmd.Parameters.Add("@playerName", MySqlDbType.VarChar).Value = playerName;
                 cn.Open();
@@ -60,7 +60,7 @@ namespace ProConfig
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
-                string query = "SELECT Video FROM ProPlayer WHERE PlayerName=@playerName";
+                string query = "SELECT Video FROM proPlayer WHERE PlayerName=@playerName";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 cmd.Parameters.Add("@playerName", MySqlDbType.VarChar).Value = playerName;
                 cn.Open();
@@ -81,7 +81,7 @@ namespace ProConfig
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
-                string query = "SELECT Config FROM ProPlayer WHERE PlayerName=@playerName";
+                string query = "SELECT Config FROM proPlayer WHERE PlayerName=@playerName";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 cmd.Parameters.Add("@playerName", MySqlDbType.VarChar).Value = playerName;
                 cn.Open();
@@ -100,7 +100,7 @@ namespace ProConfig
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
-                string query = "SELECT Autoexec FROM ProPlayer WHERE PlayerName=@playerName";
+                string query = "SELECT Autoexec FROM proPlayer WHERE PlayerName=@playerName";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 cmd.Parameters.Add("@playerName", MySqlDbType.VarChar).Value = playerName;
                 cn.Open();
@@ -121,7 +121,7 @@ namespace ProConfig
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
-                string query = "SELECT Video FROM ProPlayer WHERE PlayerName=@playerName";
+                string query = "SELECT Video FROM proPlayer WHERE PlayerName=@playerName";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 cmd.Parameters.Add("@playerName", MySqlDbType.VarChar).Value = playerName;
                 cn.Open();
@@ -143,7 +143,7 @@ namespace ProConfig
             List<string> playerNames = new List<string>();
             using (MySqlConnection cn = conn.GetConnection())
             {
-                string query = "SELECT PlayerName FROM ProPlayer";
+                string query = "SELECT PlayerName FROM proPlayer";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 cn.Open();
                 var reader = cmd.ExecuteReader();

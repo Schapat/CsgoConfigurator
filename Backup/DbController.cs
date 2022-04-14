@@ -25,9 +25,10 @@ namespace Backup
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
-                string query = "SELECT COUNT(*) FROM backup WHERE UserID=@userID";
+                string query = "SELECT COUNT(*) FROM backup WHERE UserID=@userID AND Deleted=@deleted";
                 MySqlCommand cmd = new MySqlCommand(query, cn);
                 cmd.Parameters.Add("@userID", MySqlDbType.VarChar).Value = Session.userID;
+                cmd.Parameters.Add("@deleted", MySqlDbType.Bit).Value = 0;
                 cn.Open();
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -39,6 +40,24 @@ namespace Backup
                 cn.Close();
                 return false;
             }      
+        }
+
+        public void DeleteBackup(List<String> identifier)
+        {
+            query = "UPDATE backup SET Deleted=@deleted WHERE UserID=@userID AND UploadTime=@uploadTime AND BackupName=@backupName";
+
+            using (MySqlConnection cn = conn.GetConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, cn);
+                
+                cmd.Parameters.Add("@backupName", MySqlDbType.VarChar).Value = identifier[0];
+                cmd.Parameters.Add("@uploadTime", MySqlDbType.VarChar).Value = identifier[1];
+                cmd.Parameters.Add("@deleted", MySqlDbType.Bit).Value = 1;
+                cmd.Parameters.Add("@userID", MySqlDbType.Int32).Value = Session.userID;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
         }
 
         public void SaveFile(Data backupData)
@@ -89,12 +108,13 @@ namespace Backup
 
         public DataTable LoadFile()
         {
-            string query = "SELECT BackupName, UploadTime FROM backup WHERE UserID=@userID";
+            string query = "SELECT BackupName, UploadTime FROM backup WHERE UserID=@userID AND Deleted=@deleted";
 
             using (MySqlConnection cn = conn.GetConnection())
             {
                 MySqlDataAdapter adp = new MySqlDataAdapter(query, cn);
                 adp.SelectCommand.Parameters.Add("@userID",MySqlDbType.Int64).Value = Session.userID;
+                adp.SelectCommand.Parameters.Add("@deleted", MySqlDbType.Bit).Value = 0;
 
                 DataTable dt = new DataTable();
                 adp.Fill(dt);
