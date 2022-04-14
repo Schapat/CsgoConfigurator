@@ -37,7 +37,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.Backup = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.panelBackup = new System.Windows.Forms.Panel();
@@ -88,7 +87,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Font = new System.Drawing.Font("Ink Free", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel3.ForeColor = System.Drawing.Color.Red;
-            this.metroLabel3.Location = new System.Drawing.Point(22, 11);
+            this.metroLabel3.Location = new System.Drawing.Point(22, 26);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(162, 60);
             this.metroLabel3.TabIndex = 13;
@@ -157,7 +156,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(27, 71);
+            this.label1.Location = new System.Drawing.Point(27, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 25);
             this.label1.TabIndex = 25;
@@ -165,28 +164,11 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.Backup);
             this.panelMenu.Location = new System.Drawing.Point(0, 132);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 302);
             this.panelMenu.TabIndex = 26;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(21)))), ((int)(((byte)(219)))));
-            this.button2.FlatAppearance.BorderSize = 3;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Agency FB", 18F);
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(0, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 139);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Pro Configs";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Backup
             // 
@@ -198,7 +180,7 @@
             this.Backup.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Backup.Location = new System.Drawing.Point(0, 0);
             this.Backup.Name = "Backup";
-            this.Backup.Size = new System.Drawing.Size(220, 146);
+            this.Backup.Size = new System.Drawing.Size(220, 288);
             this.Backup.TabIndex = 28;
             this.Backup.Text = "Backup";
             this.Backup.UseVisualStyleBackColor = false;
@@ -224,7 +206,7 @@
             this.panelBackup.Controls.Add(this.metroLabel1);
             this.panelBackup.Location = new System.Drawing.Point(219, 132);
             this.panelBackup.Name = "panelBackup";
-            this.panelBackup.Size = new System.Drawing.Size(628, 291);
+            this.panelBackup.Size = new System.Drawing.Size(615, 288);
             this.panelBackup.TabIndex = 28;
             // 
             // btnDelete
@@ -248,7 +230,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(87)))), ((int)(((byte)(89)))));
-            this.ClientSize = new System.Drawing.Size(846, 425);
+            this.ClientSize = new System.Drawing.Size(836, 422);
             this.Controls.Add(this.panelBackup);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelMenu);
@@ -277,7 +259,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button Backup;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Panel panelBackup;

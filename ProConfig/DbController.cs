@@ -12,9 +12,7 @@ namespace ProConfig
     internal class DbController
     {
         Connection conn = new Connection();
-
-
-        public void downloadCfg(string steamCfgPath, string playerName)
+        public void DownloadCfg(string steamCfgPath, string playerName)
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
@@ -35,7 +33,7 @@ namespace ProConfig
             }
         }
 
-        public void downloadAutoexec(string playerName, string steamCfgPath)
+        public void DownloadAutoexec(string playerName, string steamCfgPath)
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
@@ -56,7 +54,7 @@ namespace ProConfig
             }
         }
 
-        public void downloadVideo(string playerName, string steamCfgPath)
+        public void DownloadVideo(string playerName, string steamCfgPath)
         {
             using (MySqlConnection cn = conn.GetConnection())
             {
