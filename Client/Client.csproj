@@ -103,6 +103,10 @@
       <Project>{c5550f52-d2c9-4bce-9eab-304afcd21cae}</Project>
       <Name>MySqlCommunication</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProConfig\ProConfig.csproj">
+      <Project>{d7b3e416-566f-4775-ac00-6b3504cf3b58}</Project>
+      <Name>ProConfig</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Steam\Steam.csproj">
       <Project>{65ce4640-2674-4131-8f37-8e7c1b084622}</Project>
       <Name>Steam</Name>

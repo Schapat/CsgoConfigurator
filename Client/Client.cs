@@ -11,20 +11,23 @@ using System.Windows.Forms;
 using MySqlCommunication;
 using Steam;
 using Backup;
+using ProConfig;
 
 namespace Client
 {
     public partial class Client : Form
     {
         DbController dc = new DbController();
+        PlayerDbController playerDb = new PlayerDbController();
+        FileGrabber fg = new FileGrabber();
+
         public Client()
         {
             InitializeComponent();
-            LaunchGUI1();
-            dataGridView1.DataSource = dc.LoadFile();
+            LaunchGUI();
         }
 
-        private void LaunchGUI1()
+        private void LaunchGUI()
         {           
             SteamDirectorys directorys = new SteamDirectorys();
             var steamDirectorys = directorys.FindSteamDirectorys();
@@ -47,7 +50,14 @@ namespace Client
                 metroButton1.Visible = true;
                 metroLabel1.Visible = true;
                 metroLabel3.Visible = true;
-            }           
+            }
+
+            dataGridView1.DataSource = dc.LoadFile();
+
+            foreach (var player in playerDb.GetPlayerNames())
+            {
+                listBox1.Items.Add(player);
+            }
         }
 
         private void downloadButton_Click(object sender, EventArgs e)
@@ -70,14 +80,14 @@ namespace Client
         }
 
         private void uploadButton_Click(object sender, EventArgs e)
-        {
-            FileGrabber fg = new FileGrabber();
+        { 
             var backupFiles = fg.SearchConfigurationFiles(comboBox2.Text);
             if (dc.CheckBackupCount())
             {
                 dc.SaveFile(backupFiles);
                 dataGridView1.DataSource = dc.LoadFile();
-            }else
+            }
+            else
             {
                 MessageBox.Show("BackupFull","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -92,6 +102,7 @@ namespace Client
         private void Backup_Click(object sender, EventArgs e)
         {
             panelBackup.Visible = true;
+            panel1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -116,6 +127,35 @@ namespace Client
             else
             {
                 System.Windows.Forms.MessageBox.Show("No Backup selected", "Information", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelBackup.Visible = false;
+            panel1.Visible = true;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            checkBoxAutoexec.Enabled =  playerDb.CheckConfigExists(listBox1.SelectedItem.ToString());
+            checkBoxConfig.Enabled = playerDb.CheckConfigExists(listBox1.SelectedItem.ToString());
+            checkBoxVideo.Enabled = playerDb.CheckConfigExists(listBox1.SelectedItem.ToString());
+        }
+
+        private void btnUseConfig_Click(object sender, EventArgs e)
+        {
+            if (checkBoxAutoexec.Checked)
+            {
+                playerDb.DownloadAutoexec(listBox1.SelectedItem.ToString(), comboBox2.Text);
+            }
+            if (checkBoxConfig.Checked)
+            {
+                playerDb.DownloadCfg(listBox1.SelectedItem.ToString(), comboBox2.Text);
+            }
+            if (checkBoxVideo.Checked)
+            {
+                playerDb.DownloadVideo(listBox1.SelectedItem.ToString(), comboBox2.Text);
             }
         }
     }
