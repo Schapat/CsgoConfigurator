@@ -60,7 +60,7 @@ namespace Backup
             }
         }
 
-        public void SaveFile(Data backupData)
+        public void SaveFile(LocalDataPath backupData)
         {
             if (backupData.config != null)
             {

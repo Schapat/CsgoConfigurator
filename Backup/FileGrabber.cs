@@ -10,13 +10,13 @@ namespace Backup
 {
     public class FileGrabber
     {
-        Data backupData;
+        LocalDataPath backupData;
         public FileGrabber()
         {
-            backupData = new Data();
+            backupData = new LocalDataPath();
         }
 
-        public Data SearchConfigurationFiles(String cfgDir)
+        public LocalDataPath SearchConfigurationFiles(String cfgDir)
         {
             Regex regEx = new Regex(@"(?<=userdata\\)(.*)(?=\\730)");
             backupData.name ="Account: "+ regEx.Match(cfgDir).ToString() ;
