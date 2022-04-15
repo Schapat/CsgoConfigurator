@@ -44,12 +44,12 @@ namespace Client
             if(steamDirectorys.Count == 0)
             {
                 //LOAD GUI FOR MANUAL PATH FINDING
-                metroLabel3.Text = "Example path:";
+                mLabel3.Text = "Example path:";
                 comboBox2.Text = "\"c:\\Program Files (x86)\\Steam\\userdata\\1234567\\\"";
-                metroLabel1.Text = "No folder found. Pls Select manually";
-                metroButton1.Visible = true;
-                metroLabel1.Visible = true;
-                metroLabel3.Visible = true;
+                mLabel1.Text = "No folder found. Pls Select manually";
+                mButton1.Visible = true;
+                mLabel1.Visible = true;
+                mLabel3.Visible = true;
             }
 
             dataGridView1.DataSource = dc.LoadFile();

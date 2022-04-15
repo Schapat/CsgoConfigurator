@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.metroButton1 = new System.Windows.Forms.Button();
-            this.metroLabel1 = new System.Windows.Forms.Label();
-            this.metroLabel3 = new System.Windows.Forms.Label();
+            this.mButton1 = new System.Windows.Forms.Button();
+            this.mLabel1 = new System.Windows.Forms.Label();
+            this.mLabel3 = new System.Windows.Forms.Label();
             this.downloadButton = new System.Windows.Forms.Button();
             this.uploadButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -74,38 +74,38 @@
             this.comboBox2.Size = new System.Drawing.Size(506, 32);
             this.comboBox2.TabIndex = 10;
             // 
-            // metroButton1
+            // mButton1
             // 
-            this.metroButton1.Font = new System.Drawing.Font("Agency FB", 18F);
-            this.metroButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroButton1.Location = new System.Drawing.Point(69, 16);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(110, 41);
-            this.metroButton1.TabIndex = 11;
-            this.metroButton1.Text = "find File";
-            this.metroButton1.Visible = false;
+            this.mButton1.Font = new System.Drawing.Font("Agency FB", 18F);
+            this.mButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.mButton1.Location = new System.Drawing.Point(69, 16);
+            this.mButton1.Name = "mButton1";
+            this.mButton1.Size = new System.Drawing.Size(110, 41);
+            this.mButton1.TabIndex = 11;
+            this.mButton1.Text = "find File";
+            this.mButton1.Visible = false;
             // 
-            // metroLabel1
+            // mLabel1
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.ForeColor = System.Drawing.Color.Red;
-            this.metroLabel1.Location = new System.Drawing.Point(185, 43);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(65, 13);
-            this.metroLabel1.TabIndex = 12;
-            this.metroLabel1.Text = "metroLabel1";
-            this.metroLabel1.Visible = false;
+            this.mLabel1.AutoSize = true;
+            this.mLabel1.ForeColor = System.Drawing.Color.Red;
+            this.mLabel1.Location = new System.Drawing.Point(185, 43);
+            this.mLabel1.Name = "mLabel1";
+            this.mLabel1.Size = new System.Drawing.Size(65, 13);
+            this.mLabel1.TabIndex = 12;
+            this.mLabel1.Text = "mLabel1";
+            this.mLabel1.Visible = false;
             // 
-            // metroLabel3
+            // mLabel3
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Font = new System.Drawing.Font("Ink Free", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroLabel3.ForeColor = System.Drawing.Color.Red;
-            this.metroLabel3.Location = new System.Drawing.Point(22, 26);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(162, 60);
-            this.metroLabel3.TabIndex = 13;
-            this.metroLabel3.Text = "Ascent";
+            this.mLabel3.AutoSize = true;
+            this.mLabel3.Font = new System.Drawing.Font("Ink Free", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mLabel3.ForeColor = System.Drawing.Color.Red;
+            this.mLabel3.Location = new System.Drawing.Point(22, 26);
+            this.mLabel3.Name = "mLabel3";
+            this.mLabel3.Size = new System.Drawing.Size(162, 60);
+            this.mLabel3.TabIndex = 13;
+            this.mLabel3.Text = "Ascent";
             // 
             // downloadButton
             // 
@@ -203,7 +203,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.Controls.Add(this.metroLabel3);
+            this.panelHeader.Controls.Add(this.mLabel3);
             this.panelHeader.Controls.Add(this.label1);
             this.panelHeader.Location = new System.Drawing.Point(0, -2);
             this.panelHeader.Name = "panelHeader";
@@ -213,11 +213,11 @@
             // panelBackup
             // 
             this.panelBackup.Controls.Add(this.btnDelete);
-            this.panelBackup.Controls.Add(this.metroButton1);
+            this.panelBackup.Controls.Add(this.mButton1);
             this.panelBackup.Controls.Add(this.downloadButton);
             this.panelBackup.Controls.Add(this.dataGridView1);
             this.panelBackup.Controls.Add(this.uploadButton);
-            this.panelBackup.Controls.Add(this.metroLabel1);
+            this.panelBackup.Controls.Add(this.mLabel1);
             this.panelBackup.Location = new System.Drawing.Point(219, 132);
             this.panelBackup.Name = "panelBackup";
             this.panelBackup.Size = new System.Drawing.Size(615, 288);
@@ -384,9 +384,9 @@
 
         #endregion
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button metroButton1;
-        private System.Windows.Forms.Label metroLabel1;
-        private System.Windows.Forms.Label metroLabel3;
+        private System.Windows.Forms.Button mButton1;
+        private System.Windows.Forms.Label mLabel1;
+        private System.Windows.Forms.Label mLabel3;
         private System.Windows.Forms.Button downloadButton;
         private System.Windows.Forms.Button uploadButton;
         private System.Windows.Forms.DataGridView dataGridView1;
